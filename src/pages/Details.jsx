@@ -1,5 +1,5 @@
 import { useParams } from "react-router"
-import Specifications from "../components/Details/specifications";
+import Specifications from "../components/Details/Specifications";
 import ProductDetails from "../components/Details/Product-details";
 import { useLoaderData } from "react-router";
 import Carousel from "../components/Details/Carousel";
