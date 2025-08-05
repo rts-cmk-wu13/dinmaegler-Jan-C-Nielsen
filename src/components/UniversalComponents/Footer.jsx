@@ -1,6 +1,6 @@
 import { Link } from "react-router";
 import phoneimg from "/phone-solid_1.png";
-import twitterimg from "/twitter.png";
+import dinmaegler from "/Dinmaegler.png";
 import facebookimg from "/facebook.png";
 import instagramimg from "/instagram.png";
 import youtubeimg from "/youtube.png";
@@ -13,21 +13,23 @@ export default function Footer() {
     return (
         <>
             <footer className="footer">
+                <img src={dinmaegler} />
+                <h3 className="footer__para">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words.</h3>
                 <div className="footer__primary">
                     <section className="footer__navigation">
 
-                        <p className="footer__para"><Link to="/" className="footer__navigationItem">Home</Link></p>
-                        <p className="footer__para"><Link to="Shop" className="footer__navigationItem">Shop</Link></p>
-                        <p className="footer__para"><Link to="AboutUs" className="footer__navigationItem">About</Link></p>
+                        <p className="footer__para"><Link to="https://www.de.dk/" className="footer__navigationItem">Medlem af </Link></p>
+                        <p className="footer__para"><Link to="https://www.de.dk/" className="footer__navigationItem">DMS</Link></p>
+                        <p className="footer__para"><Link to="https://www.de.dk/" className="footer__navigationItem">Dansk Mægler Sammenslutning</Link></p>
 
                     </section>
 
                     <section className="footer__moreinfo">
                         <div className="footer__moreinfoItems">
-                            <p className="footer__para"><Link to="moreinfo" className="footer__moreinfoItem">Returns & Refunds</Link></p>
-                            <p className="footer__para"><Link to="moreinfo" className="footer__moreinfoItem">Delivery</Link></p>
-                            <p className="footer__para"><Link to="moreinfo" className="footer__moreinfoItem">Privacy Policy</Link></p>
-                            <p className="footer__para"><Link to="moreinfo" className="footer__moreinfoItem">Terms & Conditions</Link></p>
+                            <p className="footer__para"><Link to="moreinfo" className="footer__moreinfoItem">Boliger til salg</Link></p>
+                            <p className="footer__para"><Link to="moreinfo" className="footer__moreinfoItem">Mæglere</Link></p>
+                            <p className="footer__para"><Link to="moreinfo" className="footer__moreinfoItem">Kontakt os</Link></p>
+                            <p className="footer__para"><Link to="moreinfo" className="footer__moreinfoItem">Log ind / bliv bruger</Link></p>
                         </div>
                     </section>
 
@@ -35,28 +37,26 @@ export default function Footer() {
                         <h3 className="footer__contactTitle">Contact</h3>
                         <div className="footer__contactItems">
                             <div className="footer__para"><Link to="contact" className="footer__contactItem">
-                                <p className="footer__para">2 Joppa Rd, Edinburgh, EH15 2EU</p>
-                                <p className="footer__para"><img src={phoneimg} /><span>0131 556 7901</span></p></Link></div>
+                                <p className="footer__para">Ring til os</p>
+                                <p className="footer__para"><img src={phoneimg} /><span>+45 7070 4000</span></p></Link></div>
                             <div className="footer__para"><Link to="contact" className="footer__contactItem">
-                                <p className="footer__para">2 Joppa Rd, Edinburgh, EH15 2EU</p>
-                                <p className="footer__para"><img src={phoneimg} />01324 629 011</p></Link></div>
+                                <p className="footer__para">Send en mail</p>
+                                <p className="footer__para"><img src={phoneimg} />4000@dinmaegler.com</p></Link></div>
+                                  <div className="footer__para"><Link to="contact" className="footer__contactItem">
+                                <p className="footer__para">Butik</p>
+                                <p className="footer__para"><img src={phoneimg} />Stændertorvet 78, 4000 Roskilde</p></Link></div>
                         </div>
-                        <section className="footer__socials">
-                            <div className="footer__socialsItems">
-                                <a href="https://www.facebook.com/hifihorizon" className="footer__socialsItem"><img src={facebookimg} alt="" /></a>
-                                <a href="https://x.com/" className="footer__socialsItem"><img src={twitterimg} alt="" /></a>
-                                <a href="https://www.instagram.com/hifihorizon/" className="footer__socialsItem"><img src={instagramimg} alt="" /></a>
-                                <a href="https://www.instagram.com/hifihorizon/" className="footer__socialsItem"><img src={youtubeimg} alt="" /></a>
-                            </div>
-                        </section>
+                        <div className="footer__para">
+                                <p className="footer__para">Din Mægler Roskilde, er din boligibutik i lokalområdet.</p>
+                        </div>
                     </section>
+                    
 
 
                 </div>
                 <hr></hr>
                 <div className="footer__secondary">
-                    <div><img src={stribe} alt="" /><img src={mastercard} alt="" /><img src={visa} alt="" /></div>
-                    <small className="footer__copyright">HiFi Horizon (Edinburgh) Ltd is registered in Scotland. No: SC049298. Registered office: 2 Joppa Rd, Edinburgh EH15 2EU</small>
+                    <small className="footer__copyright">Layout By Jit Banik 2020</small>
                 </div>
             </footer>
         </>
