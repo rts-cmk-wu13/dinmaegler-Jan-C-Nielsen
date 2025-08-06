@@ -16,6 +16,9 @@
         margin: auto;
     }
 
+    &__dms {
+       font-size: 24px;
+    }
 
     &__columns {
         display: flex;
@@ -34,6 +37,7 @@
 
         color: black;
         margin-left: 10rem;
+        margin-bottom: 4rem;
         gap: 20px;
 
         p {
@@ -74,7 +78,6 @@
 
     &__navigation {
         color: black;
-
     }
 
     &__navigationItem {
@@ -88,7 +91,7 @@
 
 
     &__contact {
-        margin-left: 10rem;
+        margin-left: 1rem;
         text-align: left;
     }
 

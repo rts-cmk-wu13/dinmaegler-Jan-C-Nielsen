@@ -67,7 +67,7 @@ export default function Footer() {
                             <section className="footer__navigation">
                                 <div className="footer__moreinfoItems">
                                     <p className="footer__para"><Link to="https://www.de.dk/" className="footer__navigationItem">Medlem af </Link></p>
-                                    <p className="footer__para"><Link to="https://www.de.dk/" className="footer__navigationItem">DMS</Link></p>
+                                    <p className="footer__para footer__dms"><Link to="https://www.de.dk/" className="footer__navigationItem">DMS</Link></p>
                                     <p className="footer__para"><Link to="https://www.de.dk/" className="footer__navigationItem">Dansk Mægler Sammenslutning</Link></p>
                                 </div>
                             </section>
