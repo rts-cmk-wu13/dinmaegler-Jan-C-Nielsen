@@ -3,26 +3,36 @@
 @use '/src/styles/variables' as *;
 
 .footer {
-    
-    background-color: $blackColor;
+
+    background-color: $whiteColor;
+    color: $blackColor;
     padding: 20px;
-    text-align: center;
+    text-align: left;
     font-size: 14px;
-    color: white;
 
     &__primary {
+
+        width: 728px;
+        margin: auto;
+    }
+
+
+    &__columns {
         display: flex;
-    
+      
+        margin-bottom: 20px;
     }
 
     &__para {
-        margin-top: 1rem;
+        margin-top: 0.5rem;
         padding: 0;
-        color: white;
+        color: black;
         text-decoration: none;
     }
 
     &__moreinfoItems {
+
+        color: black;
         margin-left: 10rem;
         gap: 20px;
 
@@ -31,8 +41,9 @@
         }
 
         a {
-            color: $backgroundColor;
+            color: black;
             text-decoration: none;
+
 
             &:hover {
                 color: $buttonBackgroundColor;
@@ -40,42 +51,38 @@
         }
     }
 
-    &__socials {
-        display: flex;
-        justify-content: center;
-        gap: 10px;
-
-        a {
-            color: $backgroundColor;
-
-            &:hover {
-                color: green;
-            }
-        }
-    }
-
 
     &__contactItems {
-        color: white;
         p {
             text-align: left;
         }
     }
-    &__contactItem{
-        img{
+
+    &__contactItem {
+        display: flex;
+
+        img {
+            align-self: center ;
             margin-right: 1rem;
-         }
-         span{
+        }
+
+        span {
             padding-bottom: 10px;
-           
-         }
+
+        }
     }
 
-    &__navigationItem{
+    &__navigation {
+        color: black;
+
+    }
+
+    &__navigationItem {
         color: $productCardBackground;
         text-decoration: none;
     }
-    &__navigationItem:hover{
+
+    &__navigationItem:hover {
         color: $buttonBackgroundColor;
     }
 
@@ -88,8 +95,8 @@
     &__socialsItem {
         margin-left: 0.5rem;
         text-align: left;
-        
-        img{
+
+        img {
             margin-top: 1rem;
             margin-right: 1rem;
             margin-bottom: 2rem;
@@ -101,19 +108,19 @@
     }
 
     &__secondary {
-        text-align: left;
+        text-align: center;
         margin-top: 20px;
-
-        img {
-            margin-right: 1rem;
-        }
-
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        font-size: 12px;
+        color: white;
+        background-color: black;
     }
 }
 
 
 
-.hifilogo{
+.hifilogo {
     border: 1px solid $whiteColor;
     background-color: $blackColor;
     width: fit-content;
@@ -124,30 +131,34 @@
     align-items: end;
 
     cursor: pointer;
-    &__textbox{
+
+    &__textbox {
         padding-left: 0.2em;
         padding-bottom: 0.1em;
     }
-    &__text{
+
+    &__text {
         text-transform: uppercase;
         color: $whiteColor;
         font-size: 12px;
     }
 }
 
-.header{
+.header {
     background-color: $blackColor;
     color: $whiteColor;
     padding: 21px 34px;
 
     display: flex;
     justify-content: space-between;
-    &__left{
+
+    &__left {
         display: flex;
         align-items: center;
         gap: 32px;
     }
-    &__right{
+
+    &__right {
         display: flex;
         align-items: center;
         gap: 51px;
@@ -157,40 +168,46 @@
     //     text-decoration: none;
     //     color: white;
     // }
-    &__navigation{
+    &__navigation {
         display: flex;
         gap: 32px;
         padding-top: 10px;
     }
-    &__navigation-item{
+
+    &__navigation-item {
         color: $whiteColor;
         text-transform: uppercase;
         font-size: 14px;
     }
-    &__navigation-item:hover{
+
+    &__navigation-item:hover {
         color: $orangeColor;
     }
 
-    &__search-input{
-        
+    &__search-input {
+
         padding: 12px 0 10px 11px;
         background-color: $greyColor;
         border: none;
         border-radius: 2px;
     }
-    &__search-input::placeholder{
+
+    &__search-input::placeholder {
         font-size: 12px;
         color: $blackColor;
     }
-    &__search-input:focus{
+
+    &__search-input:focus {
         outline: none;
     }
-    &__search-wrapper{
+
+    &__search-wrapper {
         position: relative;
         display: flex;
         align-items: center;
     }
-    &__search-icon{
+
+    &__search-icon {
         color: $blackColor;
         position: absolute;
         right: 10px;
@@ -199,34 +216,40 @@
         height: 22px;
         width: 22px;
     }
-    &__link-icons{
+
+    &__link-icons {
         display: flex;
         gap: 26px;
     }
-    &__profile-icon, &__basket-icon{
+
+    &__profile-icon,
+    &__basket-icon {
         font-size: 26px;
         color: $whiteColor;
     }
 }
 
-.productcard{
+.productcard {
     max-height: 339px;
     max-width: 258px;
     background-color: $whiteColor;
     box-shadow: 2px 4px 4px 0 #00000024;
     border-radius: 3px;
-    &__img-container{
+
+    &__img-container {
         // width: 100%;
         margin: 45px 30px 11px 30px;
         max-width: 198px;
         height: 99px;
     }
-    &__img{
+
+    &__img {
         width: 100%;
         height: 100%;
         background-color: grey;
     }
-    &__textbox{
+
+    &__textbox {
         font-family: "OpenSans", sans-serif;
         font-family: 14px;
         font-weight: bold;
@@ -234,20 +257,20 @@
         margin: 0 auto;
         margin-bottom: 46px;
     }
-    &__digital{
+
+    &__digital {
         margin-top: 5px;
         display: block;
     }
-    &__price{
+
+    &__price {
         font-size: 24px;
         margin: 0 auto;
     }
-    &__footer-home{
+
+    &__footer-home {
         width: 100%;
         display: flex;
         justify-content: center;
     }
 }
-
-
-
