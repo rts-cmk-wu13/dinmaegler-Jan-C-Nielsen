@@ -17,12 +17,12 @@
     }
 
     &__dms {
-       font-size: 24px;
+        font-size: 24px;
     }
 
     &__columns {
         display: flex;
-      
+
         margin-bottom: 20px;
     }
 
@@ -66,7 +66,7 @@
         display: flex;
 
         img {
-            align-self: center ;
+            align-self: center;
             margin-right: 1rem;
         }
 
@@ -148,23 +148,47 @@
 }
 
 .header {
-    background-color: $blackColor;
-    color: $whiteColor;
+
     padding: 21px 34px;
 
-    display: flex;
-    justify-content: space-between;
 
-    &__left {
+    &__top {
+        
         display: flex;
+        justify-content: space-between;
+        background-color: $blackColor;
+        color: $whiteColor;
         align-items: center;
-        gap: 32px;
     }
 
-    &__right {
+    &__bottom {
         display: flex;
         align-items: center;
         gap: 51px;
+        color: $blackColor;
+        background-color: $whiteColor;
+    }
+
+    &__contactItems {
+        margin-left: 400px;
+        display: flex;
+       
+    }
+
+    &__link-icons {
+         margin-right: 400px;
+        justify-self: flex-end;
+    }
+
+    &__para {
+       color: $whiteColor;
+        align-self: center;
+    }
+
+    &__contactItem {
+
+        display: flex;
+
     }
 
     // &__logo-link{
@@ -178,7 +202,7 @@
     }
 
     &__navigation-item {
-        color: $whiteColor;
+        color: $blackColor;
         text-transform: uppercase;
         font-size: 14px;
     }
