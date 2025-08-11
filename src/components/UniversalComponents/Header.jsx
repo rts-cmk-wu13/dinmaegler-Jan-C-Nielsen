@@ -1,10 +1,12 @@
 import { Link, useNavigate } from "react-router";
-import Logo from "./HifiLogo";
+
 import { FaSearch, FaUser } from "react-icons/fa";
 import { MdShoppingCart } from "react-icons/md";
 import { useState, useEffect } from "react";
+import Logo from "./HifiLogo";
 import paperplaneicon from "/PaperplaneIcon.png";
 import phoneicon from "/PhoneIcon.png";
+
 
 export default function Header() {
   const navigate = useNavigate();
@@ -52,6 +54,7 @@ export default function Header() {
         <section className="header__link-icons">
           <Link to="/login">
             <FaUser className="header__profile-icon" />
+             <p className="header__para">Log ind</p>
           </Link>
 
         </section>

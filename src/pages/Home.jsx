@@ -1,4 +1,4 @@
-import Intro from "../components/Home/Intro";
+import Hero from "../components/Home/Hero";
 import Newsletter from "../components/Home/Newsletter";
 import HomeProducts from "../components/Home/HomeProducts";
 import { useLoaderData } from "react-router";
@@ -16,7 +16,7 @@ export default function Home(){
         <HomeProducts
         data={products}
         />
-        <Intro/>
+        <Hero/>
         <Newsletter/>
         </section>
         </>
