@@ -176,6 +176,8 @@
     }
 
     &__link-icons {
+         display: flex;
+          align-self: center;
          margin-right: 400px;
         justify-self: flex-end;
     }
