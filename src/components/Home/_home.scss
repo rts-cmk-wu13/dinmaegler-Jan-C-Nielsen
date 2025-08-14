@@ -1,38 +1,69 @@
 @use '/src/styles/variables' as *;
 
 
-.home{
-    &__headline{
+.home {
+    &__headline {
         font-family: 'OpenSans', sans-serif;
     }
 }
 
-.homeproducts{
-    padding: 20px 38px 0 38px;
+.homeproducts {
+    // padding: 20px 38px 0 38px;
     // background-color: ;
-    &__header{
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+    width: 80%;
+    margin: 0 auto;
+
+    &__header {
+        text-align: center;
+
         margin-bottom: 25px;
     }
-    &__headline{
-        font-size: 24px;
+
+    &__headline {
+        font-size: 58px;
         font-family: "OpenSans", sans-serif;
         font-weight: bold;
         text-transform: uppercase;
         color: $headlineColor;
-    }
-    &__products{
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
 
-        gap: 30px;
-        width: 100%;
-        justify-content: space-between;
-        margin-bottom: 68px;
-        @media (min-width: 768px) {
-            grid-template-columns: repeat(4, 1fr);
-        }
     }
+
+    &__subheadline {
+        font-size: 18px;
+        font-family: "OpenSans", sans-serif;
+        font-weight: 400;
+        width: 33%;
+        margin-bottom: 30px;
+        margin: 0 auto;
+    }
+
+    &__products {
+        display: grid;
+        grid-template-columns: repeat(2, auto); //repeat(2, 1fr);
+        //grid-template-rows: repeat(2, 200px);;
+         gap: 30px;
+        // width: 540px;
+        //justify-content: space-between;
+        // margin-bottom: 68px;
+
+    }
+
+  
+
+    &__button {
+        margin: 0 auto;
+        text-align: center;
+        width: fit-content;
+
+    }
+
 }
+
+.button-wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 1rem;
+    /* optional spacing */
+}
+

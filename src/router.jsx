@@ -30,11 +30,6 @@ import Compare from "./pages/Compare";
 // import { handleSubmit } from "./api/actions";
 // import RequireAuth from "./components/RequireAuth";
 
-
-
-
-
-
 const router = createBrowserRouter([
     {
 

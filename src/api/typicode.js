@@ -8,9 +8,9 @@ export async function getProducts() {
     // if (!token) redirect("/login")
 
     return queryClient.fetchQuery({
-        queryKey: ['users'],
+        queryKey: ['home'],
         queryFn: async () => {
-            const response = await fetch('https://hifi-api-pzft.onrender.com/products');
+            const response = await fetch('https://dinmaegler.onrender.com/homes?_limit=4');
             if (!response.ok) {
                 throw new Error('Network response was not ok');
             }
