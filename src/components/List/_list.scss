@@ -1,21 +1,9 @@
 @use '/src/styles/variables' as *;
 
-.productlist{
-   display: grid;
-   grid-template-columns: repeat(3, 1fr);
-   row-gap: 31px;
-
-   @media (max-width:768px){
-    grid-template-columns: repeat(2,1fr);
-   }
+.productlist {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 58%;
+    margin: 0 auto;
+    row-gap: 20px;
 }
-
-.list{
-    display: flex;
-    gap: 49px;
-
-    &__nav{
-        width: 300px;
-    }
-}
-
