@@ -12,11 +12,9 @@ export default function List() {
   return (
     <>
       <section className="list">
-       
         <ProductRendering data={products} />
       </section>
     
-
     </>
   );
 }

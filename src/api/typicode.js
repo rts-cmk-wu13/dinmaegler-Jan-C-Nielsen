@@ -1,23 +1,21 @@
 import queryClient from "../QueryClient";
 import { redirect } from "react-router";
-
+import { useLocation } from 'react-router';
 
 //produkter
 export async function getProducts({ request }) {
     const incomingurl = new URL(request.url);  // Create URL object from request URL
-    const searchParams = incomingurl.searchParams;  // URLSearchParams instance
-    const propertytype = searchParams?.get ? searchParams.get('propertytype') : undefined;
-    console.log(`Selected property type: ${searchParams.get('propertytype')}`);
+    console.log(incomingurl); // Output: URL object with the full URL
+    const search = incomingurl.search;  // URLSearchParams instance
+  
     // const token = sessionStorage.getItem("tokenLogin")
     // if (!token) redirect("/login")
-    const  url = propertytype
-        ? `https://dinmaegler.onrender.com/homes?type_eq=${encodeURIComponent(propertytype)}`
-        : 'https://dinmaegler.onrender.com/homes';
-
+    const  url = (`https://dinmaegler.onrender.com/homes` + search);
+   
     console.log(`Fetching products with url: ${url}`);
 
     return queryClient.fetchQuery({
-        queryKey: ['homes', propertytype],
+        queryKey: ['homes', url],
         queryFn: async () => {
             const response = await fetch(url);
             if (!response.ok) {
