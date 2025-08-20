@@ -4,7 +4,7 @@ import { useSearchParams } from "react-router";
 
 export default function DropdownMenu() {
   const navigate = useNavigate();
- // const [value, setValue] = useState('');
+  // const [value, setValue] = useState('');
   let [searchParams, setSearchParams] = useSearchParams();
 
   // function handleChange(event) {
@@ -14,17 +14,23 @@ export default function DropdownMenu() {
   // }
 
   const handleChange = (event) => {
-   const value = event.target.value;
-   const current = Object.fromEntries(searchParams.entries());
-   delete current.type_eq;
-   console.log(current);
+    const value = event.target.value;
+    const current = Object.fromEntries(searchParams.entries());
+    delete current.type_eq;
+    console.log(current);
     // Update the search params with the new values
-    setSearchParams({ ...current, type_eq : value });
+    if (value === '') {
+      setSearchParams({ ...current });
+      return;
+    }
+    else
+      // If a value is selected, update the search params
+      setSearchParams({ ...current, type_eq: value });
   };
 
   return (
-    <select onChange={handleChange}>
-      <option value="">Vælg kategori</option>
+    <select className='dropdownmenu' onChange={handleChange}>
+      <option value="">Alle</option>
       <option value="Villa">Villa</option>
       <option value="Landejendom">Landejendom</option>
       <option value="Ejerlejlighed">Ejerlejlighed</option>

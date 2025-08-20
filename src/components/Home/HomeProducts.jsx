@@ -7,8 +7,7 @@ export default function HomeProducts({ data }) {
 
     return (
         <>
-
-            <section className="homeproducts">
+           <section className="homeproducts">
                 <header className="homeproducts__header">
                     <h1 className="homeproducts__headline">Udvalgte Boliger</h1>
                     <p className="homeproducts__subheadline">There are many variations of passages of Lorem Ipsum available but the this in majority have suffered alteration in some</p>

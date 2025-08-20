@@ -29,19 +29,19 @@ function DoubleSlider() {
         values={values}
         onChange={handleValuesChange}
         renderTrack={({ props, children }) => (
-          <div
+          <div className='slider-track'
             {...props}
             style={{
-              height: '6px',
+              height: '1px',
               background: '#ccc',
-              width: '80%'
+          
             }}
           >
             {children}
           </div>
         )}
         renderThumb={({ props }) => (
-          <div
+          <div className='slider-thumb'
             {...props}
             style={{
               height: '20px',
@@ -53,8 +53,8 @@ function DoubleSlider() {
         )}
       />
       {/* Display the current values */}
-      <div style={{ margin: '10px', maxwidth: '80%', textAlign: 'center' }}>
-        Min: {values[0]} &nbsp; | &nbsp; Max: {values[1]}
+      <div style={{  display: 'flex', 'justify-content': 'space-between', margin: '10px', maxwidth: '80%', textAlign: 'center' }}>
+       <span> {new Intl.NumberFormat('de-DE').format(values[0])} &nbsp;kr </span> <span> &nbsp; {new Intl.NumberFormat('de-DE').format(values[1])} &nbsp;kr</span>
       </div>
     </div>
   );

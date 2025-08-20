@@ -5,14 +5,24 @@ import React, { useState } from 'react';
 import DoubleSlider from "../DoubleSlider/DoubleSlider";
 
 export default function ProductRendering({ data }) {
-   // const [selected, setSelected] = useState('');
+    // const [selected, setSelected] = useState('');
     const products = data
     console.log(data)
     return (
         <>
-            <h1>Boliger til salg</h1>
-            <DropdownMenu/>
-            <DoubleSlider/>
+            <h1 className="list__h1">Boliger til salg</h1>
+            <p className="list__p">Der er {products.length} boliger til salg</p>
+            <section className="list__filter">
+                <div className="list__dropdown">
+                    <p className="list__filter__text">Ejendomstype</p>
+                    <DropdownMenu />
+                </div>
+                <div className="list__slider">
+                    <p className="list__filter__text">Pris-interval</p>
+                    <DoubleSlider />
+                </div>
+            </section>
+
             <section className="productlist">
                 {products.map(item => (
                     <ProductCard

@@ -1,9 +1,54 @@
 @use '/src/styles/variables' as *;
 
+.list {
+    align-items: center;
+    width: 58%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.list__h1 {
+    font-size: 3.75rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    padding: 0.625rem;
+    text-align: center;
+    color: white;
+    background-color: black;
+}
+
+.list__p{
+    font-size: 1.25rem;
+    font-weight: 400;
+    margin-bottom: 20px;
+    padding: 0.625rem;
+}
+
+.list__filter {
+    display: flex;
+    margin-bottom: 20px;
+    width: 80%;
+}
+
+.list__dropdown {
+    width: 17.5%;
+    margin-right: 20px;
+    flex-grow: 1;
+}
+
+.list__slider {
+    flex-grow: 2;
+}
+
+
+.list__filter__text {
+    font-size: 1rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+}
+
 .productlist {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    width: 58%;
-    margin: 0 auto;
-    row-gap: 20px;
+ row-gap: 2%;
 }
