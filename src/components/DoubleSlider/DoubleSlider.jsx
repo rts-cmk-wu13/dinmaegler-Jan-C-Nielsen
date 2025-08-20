@@ -32,6 +32,7 @@ function DoubleSlider() {
           <div className='slider-track'
             {...props}
             style={{
+              ...props.style,
               height: '1px',
               background: '#ccc',
           
@@ -44,6 +45,7 @@ function DoubleSlider() {
           <div className='slider-thumb'
             {...props}
             style={{
+              ...props.style,
               height: '20px',
               width: '20px',
               backgroundColor: '#999',
