@@ -1,8 +1,10 @@
 import { z } from "zod/v4";
 import { redirect } from "react-router";
 
+import { useContext } from "react";
+
 const contactSchema = z.object({
-    email: z.email(),
+    identifier: z.email(),
     password: z.string().min(6, "Minimum of 6 characters required"),
 })
 
@@ -21,7 +23,7 @@ export const handleLogin = async ({ request }) => {
     }
 
     console.log("Parsed data:", result.data);
-    const response = await fetch("https://hifi-api-pzft.onrender.com/login", {
+    const response = await fetch("https://dinmaegler.onrender.com/auth/local", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -29,11 +31,16 @@ export const handleLogin = async ({ request }) => {
         body: JSON.stringify(result.data)
     })
 
+    console.log("Response status:", response.status);
+
     if (!response.ok) {
         console.error("Login failed:", response.statusText);
         throw new Error("Could not save data")
     }
 
-    return redirect("/")
+    const responseData = await response.json();
+    console.log("Response:", responseData);
+    sessionStorage.setItem("token", responseData.jwt);
 
+    return redirect("/")
 }

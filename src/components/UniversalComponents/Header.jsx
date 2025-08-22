@@ -6,7 +6,7 @@ import { useState, useEffect } from "react";
 import Logo from "./HifiLogo";
 import paperplaneicon from "/PaperplaneIcon.png";
 import phoneicon from "/PhoneIcon.png";
-
+import { useActionData } from "react-router";
 
 export default function Header() {
   const navigate = useNavigate();
@@ -24,25 +24,47 @@ export default function Header() {
   ];
 
 
+  // useEffect(() => {
+  //   const handleClickOutside = (e) => {
+  //     const dropdown = document.querySelector(".header__navigation-dropdown");
+  //     if (dropdown && !dropdown.contains(e.target)) {
+  //       setIsDropdownOpen(false);
+  //     }
+  //   };
+  //   document.addEventListener("mousedown", handleClickOutside);
+  //   return () => document.removeEventListener("mousedown", handleClickOutside);
+  // }, []);
+
+  const [token, setToken] = useState(null);
+
   useEffect(() => {
-    const handleClickOutside = (e) => {
-      const dropdown = document.querySelector(".header__navigation-dropdown");
-      if (dropdown && !dropdown.contains(e.target)) {
-        setIsDropdownOpen(false);
-      }
-    };
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, []);
+    const storedToken = sessionStorage.getItem("token");
+    if (storedToken) {
+      setToken(storedToken);
+      console.log("token:", token);
+    } else {
+      // Redirect or handle token absence
+      console.log("No token found");
+      setToken(null);
+    }
+  }); // Empty dependency array means it runs once on mount
+
+  // Handle logout action
+  const handleLogout = (event) => {
+    event.preventDefault(); // Prevent link from being followed
+    sessionStorage.removeItem('token'); // Remove token from sessionStorage
+    setToken(null); // Update the state to reflect that the user is logged out
+    // navigate('/login'); // Optionally redirect to the login page
+  };
 
   return (
     <header className="header">
       <section className="header__top">
         <div className="header__contactItems">
-         
+
           <Link to="contact" className="header__contactItem">
             <img src={paperplaneicon} />
-              <p className="header__para">4000@dinmaegler.com</p>
+            <p className="header__para">4000@dinmaegler.com</p>
           </Link>
 
           <Link to="contact" className="header__contactItem">
@@ -52,11 +74,11 @@ export default function Header() {
         </div>
 
         <section className="header__link-icons">
-          <Link to="/login">
+          {/* If the token is not null, show Log Out, otherwise show Log In */}
+          <Link to={token ? '#' : '/login'} onClick={token ? handleLogout : undefined}>
             <FaUser className="header__profile-icon" />
-             <p className="header__para">Log ind</p>
+            <p className="header__para">{token === null ? 'Log ind' : 'Log ud'}</p>
           </Link>
-
         </section>
       </section>
 
