@@ -260,7 +260,8 @@
 
 .productcard {
     width: 500px;
-background-color: $productCardBackground;
+    background-color: $productCardBackground;
+
     &__title {
         font-size: 20px;
         font-weight: bold;
@@ -309,11 +310,22 @@ background-color: $productCardBackground;
 
         img {
             position: absolute;
+              z-index: 1;
             //top: -30px; // move image up to crop from top
             //left: -30px; // move image left to crop from left
             width: 500px; // or fixed width
             height: 334px; // image height bigger than container height to enable cropping
             object-fit: cover; // makes sure image covers the area nicely}
+        }
+
+        .productcard__heart {
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            z-index: 2;
+            cursor: pointer;
+            width: 36px;
+            height: 36px;
         }
     }
 

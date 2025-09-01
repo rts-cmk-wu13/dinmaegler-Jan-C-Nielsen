@@ -20,16 +20,16 @@ export default function Detail(){
     return  (
         <>
 
-        <h1 className="headline">PRODUCT</h1>   
+       
 
         <section className="details">
 
         <section className="details__top">
-        <Carousel product={product}/>
+        
         <ProductDetails product={product}/>
         </section>
 
-        <Specifications product={product} />
+      
 
         </section>
         

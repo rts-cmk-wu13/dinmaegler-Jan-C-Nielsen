@@ -3,7 +3,14 @@
 
 .product__details {
     padding: 2rem;
-    max-width: 31.5rem;
+    
+    .product__img{
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+        object-fit: cover;
+        margin-bottom: 1.5rem;  
+    }
    
     h2 {
         font-weight: bold;
