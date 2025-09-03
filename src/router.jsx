@@ -26,7 +26,9 @@ import Login from "./pages/Login";
 import { handleLogin } from "./api/loginActions";
 
 import Compare from "./pages/Compare";
-
+import Carousel from "./components/Details/Carousel";
+import CarouselModal from "./components/Details/CarouselModal";
+import DetailsShell from "./components/Details/DetailsShell";
 // import { handleSubmit } from "./api/actions";
 // import RequireAuth from "./components/RequireAuth";
 
@@ -53,11 +55,21 @@ const router = createBrowserRouter([
             ,
             loader: getProducts,
         },
+
         {
             path: "details/:id",
-            element: <Details />,
-            loader: getProduct
+            id: "details",              // give it an id so children can reuse loader data
+            loader: getProduct,         // fetch the product once here
+            element: <DetailsShell />,  // renders <Details /> and an <Outlet />
+            children: [
+                {
+                    path: "carousel",       // /details/:id/carousel
+                    element: <CarouselModal />,
+                    // no loader: reuse parent's data
+                },
+            ],
         },
+            
         {
             path: "contact",
             element: <Contact />,

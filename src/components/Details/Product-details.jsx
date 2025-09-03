@@ -1,17 +1,22 @@
 import groupicons from "/GroupIcons.png";
+import Carousel from "./Carousel";
+
+import { Link, useLocation } from "react-router";
+
 
 export default function ProductDetails({ product }) {
+  const location = useLocation();
   console.log(product);
   return (
     <section className="product__details">
       <img src={product.images[0].url} alt={product.name} className="product__img" />
-   
+
       <div className="product__info">
         <div className="product__address">
           <p>{product.adress1}</p>
           <p>{product.postalcode} {product.city}</p>
         </div>
-        <img src={groupicons} className="product__status" />
+        <Link to={`/carouselmodal/${product.id}`} state={{ backgroundLocation: location }}> <img src={groupicons} className="product__status" /></Link>
         <div className="product__price">
           <span className="price">Kr. {new Intl.NumberFormat('de-DE').format(product.price)}</span>
         </div>
