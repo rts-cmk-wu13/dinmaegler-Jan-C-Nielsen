@@ -16,7 +16,7 @@ export default function ProductDetails({ product }) {
           <p>{product.adress1}</p>
           <p>{product.postalcode} {product.city}</p>
         </div>
-        <Link to={`/carouselmodal/${product.id}`} state={{ backgroundLocation: location }}> <img src={groupicons} className="product__status" /></Link>
+        <Link to={`carousel/`} state={{ backgroundLocation: location }}> <img src={groupicons} className="product__status" /></Link>
         <div className="product__price">
           <span className="price">Kr. {new Intl.NumberFormat('de-DE').format(product.price)}</span>
         </div>
