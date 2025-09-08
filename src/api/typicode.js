@@ -50,7 +50,7 @@ export async function getProduct({ params }) {
     return queryClient.fetchQuery({
         queryKey: ['user', id],
         queryFn: async () => {
-            const response = await fetch(`https://hifi-api-pzft.onrender.com/products/${id}`);
+            const response = await fetch(`https://dinmaegler.onrender.com/homes/${id}`);
             if (!response.ok) {
                 throw new Error('Network response was not ok');
             }

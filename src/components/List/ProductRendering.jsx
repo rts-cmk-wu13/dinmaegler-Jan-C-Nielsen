@@ -3,6 +3,8 @@ import { SlEqualizer } from "react-icons/sl";
 import DropdownMenu from "./DropdownMenu";
 import React, { useState } from 'react';
 import DoubleSlider from "../DoubleSlider/DoubleSlider";
+import whiteheart from "/WhiteHeart.png"
+import blackheart from "/BlackHeart.png";
 
 export default function ProductRendering({ data }) {
     // const [selected, setSelected] = useState('');
@@ -39,6 +41,8 @@ export default function ProductRendering({ data }) {
                         rooms={item.rooms}
                         cost={item.cost}
                         livingspace={item.livingspace}
+                        whiteheart={whiteheart}
+                        blackheart={blackheart}
                     />
                 ))}
             </section>

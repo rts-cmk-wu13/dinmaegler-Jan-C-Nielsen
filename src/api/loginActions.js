@@ -39,8 +39,23 @@ export const handleLogin = async ({ request }) => {
     }
 
     const responseData = await response.json();
-    console.log("Response:", responseData);
+    console.log("ResponseData:", responseData);
+
     sessionStorage.setItem("token", responseData.jwt);
+    sessionStorage.setItem("userid", responseData.user.id);
+
+    const user = responseData.user.id
+    const token = responseData.jwt
+    const responseUser = await fetch("https://dinmaegler.onrender.com/users/" + user, {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json",
+            "Authorization": 'Bearer ' + token,
+        },
+    })
+
+    const userData = await responseUser.json();
+    console.log("UserData:", userData);
 
     return redirect("/")
 }

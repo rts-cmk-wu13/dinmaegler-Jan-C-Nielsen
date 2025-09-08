@@ -1,45 +1,74 @@
+import pointicon from "/PointIcon.png";
+import layericon from "/LayerIcon.png";
+import hearticon from "/HeartIcon.png";
+import galleryicon from "/GalleryIcon.png";
+
+import Carousel from "./Carousel";
+
+import { Link, useLocation } from "react-router";
+
+
 export default function ProductDetails({ product }) {
+  const location = useLocation();
   console.log(product);
   return (
-    <section className="product__details">  
-      <h2>{product.name}</h2>
-      <h3>(Digital Output)</h3>
-      <p>{product.description}</p>
-      <p>
-        G2.1 is the next logical evolutionary step, resulting from a desire to improve upon the original G2 series. At AURALiC, we always work to create a new approach to digital music that pushes the boundaries of sonic quality. Incorporating state-of-the-art technologies and delivered with innovative features, G2.1 is built for ultimate levels of sonic performance
-      </p>
-      <p>
-        Every G2.1 series component, including the ARIES G2.1, sports an all-new industrial design that’s engineered to set a new standard for sound quality, enhance the user experience, and look every bit as good as it sounds with its contemporary aesthetic. Offering features like a copper enclosure, a high-mass base, and an enhanced suspension system optimizes the sound of the ARIES G2.1 and ensures it is the most capable and feature-rich way to introduce streaming to your audio system that we’ve ever created.
-      </p>
+    <section className="product__details">
+      <img src={product.images[0].url} alt={product.name} className="product__img" />
 
-      <div className="radio__group">
-        <div>
-          <input type="radio" id="radio1" name="radioBtn" className="radio__black" />
-          <label htmlFor="radio1">Black</label>
+      <div className="product__info">
+        <div className="product__address">
+          <p>{product.adress1}</p>
+          <p>{product.postalcode} {product.city}</p>
         </div>
-        <div>
-          <input type="radio" id="radio2" name="radioBtn" className="radio__silver" />
-          <label htmlFor="radio2">Silver</label>
-        </div>
-        <div>
-          <input type="radio" id="radio3" name="radioBtn" className="radio__gold" />
-          <label htmlFor="radio3">Gold</label>
+        <Link to={`carousel/`} state={{ backgroundLocation: location }}> <img src={pointicon} className="product__status" /></Link>
+        <Link to={`carousel/`} state={{ backgroundLocation: location }}> <img src={layericon} className="product__status" /></Link>
+        <Link to={`carousel/`} state={{ backgroundLocation: location }}> <img src={hearticon} className="product__status" /></Link>
+        <Link to={`carousel/`} state={{ backgroundLocation: location }}> <img src={galleryicon} className="product__status" /></Link>
+        <div className="product__price">
+          <span className="price">Kr. {new Intl.NumberFormat('de-DE').format(product.price)}</span>
         </div>
       </div>
-      <div className="product__price">
-        <span className="price">{product.price}</span>
-        <span className="instock">In stock <div className="instock__dot"></div></span>
+
+      <hr />
+
+      <div className="product__specifications">
+        <section className="product__specifications-column">
+          <p>Sagsnummer: {product.id}</p>
+          <p>Boligareal: {product.livingspace} m²</p>
+          <p>Grundareal: {product.lot} m²</p>
+          <p>Værelser: {product.rooms}</p>
+        </section>
+        <section className="product__specifications-column">
+          <p>Kælder: {product.basementsize}</p>
+          <p>Byggeår: {product.year}</p>
+          <p>Ombygget: {product.remodel}</p>
+          <p>Energimærke: {product.energylabel}</p>
+        </section>
+        <section className="product__specifications-column">
+          <p>Udbetaling: {new Intl.NumberFormat('de-DE').format(product.payment)} kr.</p>
+          <p>Brutto: {new Intl.NumberFormat('de-DE').format(product.gross)} kr.</p>
+          <p>Netto: {new Intl.NumberFormat('de-DE').format(product.netto)} kr.</p>
+          <p>Ejerudgift: {new Intl.NumberFormat('de-DE').format(product.cost)} kr.</p>
+        </section>
       </div>
 
-      <div className="product__btns">
-        <div className="counter">
-  <button className="decrement">−</button>
-  <span className="value">1</span>
-  <button className="increment">+</button>
-</div>
+      <div className="product__info">
+        <section className="product__decription">
+          <h3>Beskrivelse</h3>
+          <p>{product.description}</p>
+        </section>
 
-        <button className="cartBtn button">Add to Cart</button>
-    </div>
+        <section className="product__agent">
+          <img src={product.agent.image.url} alt={product.agent.name} className="agent__img" />
+          <div>
+            <h3>Ejendomsmægler</h3>
+            <p>{product.agent.name}</p>
+            <p>{product.agent.phone}</p>
+            <p>{product.agent.email}</p>
+          </div>
+        </section>
+
+      </div>
     </section>
   );
 }
