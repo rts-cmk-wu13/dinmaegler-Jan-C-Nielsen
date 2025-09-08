@@ -21,7 +21,7 @@ export default function ProductDetails({ product }) {
           <p>{product.postalcode} {product.city}</p>
         </div>
         <Link to={`carousel/`} state={{ backgroundLocation: location }}> <img src={pointicon} className="product__status" /></Link>
-        <Link to={`carousel/`} state={{ backgroundLocation: location }}> <img src={layericon} className="product__status" /></Link>
+        <Link to={`floorplan/`} state={{ backgroundLocation: location }}> <img src={layericon} className="product__status" /></Link>
         <Link to={`carousel/`} state={{ backgroundLocation: location }}> <img src={hearticon} className="product__status" /></Link>
         <Link to={`carousel/`} state={{ backgroundLocation: location }}> <img src={galleryicon} className="product__status" /></Link>
         <div className="product__price">

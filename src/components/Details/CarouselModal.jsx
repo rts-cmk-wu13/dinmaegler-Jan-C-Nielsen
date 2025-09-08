@@ -4,10 +4,10 @@ import { useNavigate, useRouteLoaderData } from "react-router";
 import { createPortal } from "react-dom";
 import Carousel from "./Carousel"; // your existing Carousel component
 
-export default function CarouselModal() {
+export default function CarouselModal({floorplanPresent}) {
   const navigate = useNavigate();
   // Reuse the parent's loader data:
-  const product = useRouteLoaderData("details");
+  const product = {...useRouteLoaderData("details"), floorplanPresent};
 
   const close = () => navigate(".."); // back to /details/:id
 
@@ -38,7 +38,7 @@ export default function CarouselModal() {
       >
         <Carousel product={product} />
         <button onClick={close} style={{ position: "absolute", top: 12, right: 12 }}>
-          ✕
+          X
         </button>
       </div>
     </div>,
