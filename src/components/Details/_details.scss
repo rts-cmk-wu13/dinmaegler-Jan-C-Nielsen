@@ -106,7 +106,7 @@ hr {
         margin: 0 auto;
         position: relative;
         overflow: hidden;
-        // width: 100%;
+        //width: 100%;
         max-width: 519px;
         margin-top: 247px;
     }
@@ -114,13 +114,14 @@ hr {
     &__slides {
         display: flex;
         transition: transform 0.3s ease-in-out;
-        max-width: 337px;
+       // max-width: 600px;
+       
     }
 
     &__slide {
         min-width: 100%;
         margin: 0;
-        height: 182px;
+       // height: 182px;
         background-color: white;
         display: flex;
         align-items: center;
@@ -177,6 +178,7 @@ hr {
         justify-content: center;
         gap: 11px;
         margin-top: 157px;
+        margin-bottom: 20px;
     }
 
     &__dot {
@@ -186,7 +188,7 @@ hr {
         border: 2px solid $lightGrey;
         background: $backgroundColor;
         cursor: pointer;
-        transition: background 0.2s ease;
+        transition: 0.2s ease;
     }
 
     &__dot:hover {

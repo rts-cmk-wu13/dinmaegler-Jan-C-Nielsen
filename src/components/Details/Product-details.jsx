@@ -1,4 +1,8 @@
-import groupicons from "/GroupIcons.png";
+import pointicon from "/PointIcon.png";
+import layericon from "/LayerIcon.png";
+import hearticon from "/HeartIcon.png";
+import galleryicon from "/GalleryIcon.png";
+
 import Carousel from "./Carousel";
 
 import { Link, useLocation } from "react-router";
@@ -16,11 +20,13 @@ export default function ProductDetails({ product }) {
           <p>{product.adress1}</p>
           <p>{product.postalcode} {product.city}</p>
         </div>
-        <Link to={`carousel/`} state={{ backgroundLocation: location }}> <img src={groupicons} className="product__status" /></Link>
+        <Link to={`carousel/`} state={{ backgroundLocation: location }}> <img src={pointicon} className="product__status" /></Link>
+        <Link to={`carousel/`} state={{ backgroundLocation: location }}> <img src={layericon} className="product__status" /></Link>
+        <Link to={`carousel/`} state={{ backgroundLocation: location }}> <img src={hearticon} className="product__status" /></Link>
+        <Link to={`carousel/`} state={{ backgroundLocation: location }}> <img src={galleryicon} className="product__status" /></Link>
         <div className="product__price">
           <span className="price">Kr. {new Intl.NumberFormat('de-DE').format(product.price)}</span>
         </div>
-
       </div>
 
       <hr />

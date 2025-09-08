@@ -20,7 +20,7 @@ export default function Carousel({product}) {
     }
 
     const prevSlide = () => {
-        setCurrentSlide((prev) => (prev - 1 + images.length))
+        setCurrentSlide((prev) => (prev > 0 ? prev - 1 : images.length-1))
     }
 
     const goToSlide = (index) => {
@@ -67,7 +67,7 @@ export default function Carousel({product}) {
                         </button>
                     ))}
                 </section>
-                <button  onClick={handleClose}>Close</button>
+               
             </section>
         </>
     )
