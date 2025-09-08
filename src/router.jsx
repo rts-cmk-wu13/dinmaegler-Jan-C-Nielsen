@@ -67,6 +67,11 @@ const router = createBrowserRouter([
                     element: <CarouselModal />,
                     // no loader: reuse parent's data
                 },
+                 {
+                    path: "floorplan",       // /details/:id/carousel
+                    element: <CarouselModal floorplanPresent={true}/>,
+                    // no loader: reuse parent's data
+                },
             ],
         },
             
