@@ -31,6 +31,7 @@ import CarouselModal from "./components/Details/CarouselModal";
 import DetailsShell from "./components/Details/DetailsShell";
 // import { handleSubmit } from "./api/actions";
 // import RequireAuth from "./components/RequireAuth";
+import AddressMap from './pages/OpenStreet';
 
 const router = createBrowserRouter([
     {
@@ -55,7 +56,11 @@ const router = createBrowserRouter([
             ,
             loader: getProducts,
         },
-
+        {
+            path: "map",
+            element: <AddressMap />
+            ,
+        },
         {
             path: "details/:id",
             id: "details",              // give it an id so children can reuse loader data
@@ -67,14 +72,14 @@ const router = createBrowserRouter([
                     element: <CarouselModal />,
                     // no loader: reuse parent's data
                 },
-                 {
+                {
                     path: "floorplan",       // /details/:id/carousel
-                    element: <CarouselModal floorplanPresent={true}/>,
+                    element: <CarouselModal floorplanPresent={true} />,
                     // no loader: reuse parent's data
                 },
             ],
         },
-            
+
         {
             path: "contact",
             element: <Contact />,
