@@ -20,7 +20,7 @@ import Signup from "./pages/SignUp";
 import { handleSignUp } from "./api/signupActions";
 // import RequireAuth from "./components/RequireAuth";
 
-import { getProducts, getProduct, getProductsNumber } from "./api/typicode";
+import { getProducts, getProduct, getProductsNumber, geocodeAddressLoader } from "./api/typicode";
 
 import Login from "./pages/Login";
 import { handleLogin } from "./api/loginActions";
@@ -29,9 +29,10 @@ import Compare from "./pages/Compare";
 import Carousel from "./components/Details/Carousel";
 import CarouselModal from "./components/Details/CarouselModal";
 import DetailsShell from "./components/Details/DetailsShell";
+import AddressMap from "./pages/OpenStreet";
 // import { handleSubmit } from "./api/actions";
 // import RequireAuth from "./components/RequireAuth";
-import AddressMap from './pages/OpenStreet';
+
 
 const router = createBrowserRouter([
     {
@@ -60,6 +61,7 @@ const router = createBrowserRouter([
             path: "map",
             element: <AddressMap />
             ,
+            loader: geocodeAddressLoader,
         },
         {
             path: "details/:id",

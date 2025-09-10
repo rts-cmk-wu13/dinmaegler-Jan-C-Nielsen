@@ -12,7 +12,21 @@ export default function ProductDetails({ product }) {
   const location = useLocation();
   console.log(product);
   const addressString = `${product.adress1} ${product.postalcode} ${product.city}`;
-  console.log(addressString);
+
+   const params = new URLSearchParams({
+     street: product.adress1,
+     city: product.city,
+     postalcode: product.postalcode,
+    // country: "denmark",
+    format: "json",
+     //addressdetails: "1",
+     limit: "1",
+    // email: "your@email.com"  // Replace with your email
+   });
+
+
+  
+  console.log(params.toString());
   return (
     <section className="product__details">
       <img src={product.images[0].url} alt={product.name} className="product__img" />
@@ -22,7 +36,7 @@ export default function ProductDetails({ product }) {
           <p>{product.adress1}</p>
           <p>{product.postalcode} {product.city}</p>
         </div>
-        <Link to={`/map/`}  state={{ address: addressString, backgroundLocation: location }}> <img src={pointicon} className="product__status" /></Link>
+        <Link to={`/map?${params}`}  state={{ backgroundLocation: location }}> <img src={pointicon} className="product__status" /></Link>
         <Link to={`floorplan/`} state={{ backgroundLocation: location }}> <img src={layericon} className="product__status" /></Link>
         <Link to={`carousel/`} state={{ backgroundLocation: location }}> <img src={hearticon} className="product__status" /></Link>
         <Link to={`carousel/`} state={{ backgroundLocation: location }}> <img src={galleryicon} className="product__status" /></Link>
