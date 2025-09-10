@@ -10,8 +10,6 @@ export default function Detail() {
     const product = useLoaderData();
     console.log(product);
 
-    const { id } = useParams();
-
     return (
         <>
             <section className="details">
