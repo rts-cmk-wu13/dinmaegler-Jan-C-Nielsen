@@ -5,11 +5,50 @@ import React, { useState } from 'react';
 import DoubleSlider from "../DoubleSlider/DoubleSlider";
 import whiteheart from "/WhiteHeart.png"
 import blackheart from "/BlackHeart.png";
+import { useLocation } from "react-router";
+
+
 
 export default function ProductRendering({ data }) {
+
+    function flattenObjectValues(obj) {
+        let result = [];
+
+        function recurse(value) {
+            if (value === null || value === undefined) {
+                return;
+            }
+
+            if (typeof value === 'object') {
+                if (Array.isArray(value)) {
+                    value.forEach(item => recurse(item));
+                } else {
+                    Object.values(value).forEach(val => recurse(val));
+                }
+            } else {
+                result.push(String(value));
+            }
+        }
+
+        recurse(obj);
+        return result.join(" ");
+    }
+
     // const [selected, setSelected] = useState('');
+    const location = useLocation();
+    const searchQuery = location.state?.query;
+    console.log("Search query from location state:", searchQuery);
+
     const products = data
     console.log(data)
+
+    const filteredProducts = products.filter((item) => {
+        const fullText = flattenObjectValues(item).toLowerCase();
+        //  const fullText = //`${item.adress1} ${item.city} ${item.postalcode}`.toLowerCase();
+        console.log(fullText);
+        return fullText.includes(searchQuery.toLowerCase());
+    });
+
     return (
         <>
             <h1 className="list__h1">Boliger til salg</h1>
@@ -26,7 +65,7 @@ export default function ProductRendering({ data }) {
             </section>
 
             <section className="productlist">
-                {products.map(item => (
+                {filteredProducts.map(item => (
                     <ProductCard
                         key={item.id}
                         title={item.type}
