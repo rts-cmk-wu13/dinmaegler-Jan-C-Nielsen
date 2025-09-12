@@ -10,10 +10,9 @@ import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 import Loading from "./components/loading";
 
-import AboutUs from "./pages/AboutUs";
+
 
 import { ErrorBoundary } from "./components/Error";
-import MoreInfo from "./pages/MoreInfo";
 
 import Signup from "./pages/SignUp";
 // import { getProducts, getProduct } from "./api/typicode";
@@ -25,7 +24,7 @@ import { getProducts, getProduct, getProductsNumber, geocodeAddressLoader } from
 import Login from "./pages/Login";
 import { handleLogin } from "./api/loginActions";
 
-import Compare from "./pages/Compare";
+
 import Carousel from "./components/Details/Carousel";
 import CarouselModal from "./components/Details/CarouselModal";
 import DetailsShell from "./components/Details/DetailsShell";
@@ -92,20 +91,7 @@ const router = createBrowserRouter([
             element: <Signup />,
             action: handleSignUp,
         },
-        {
-            path: "about",
-            element: <AboutUs />,
-            // action: handleSubmit,
-        },
-        {
-            path: "moreinfo",
-            element: <MoreInfo />,
-            // action: handleSubmit,
-        },
-        {
-            path: "compare",
-            element: <Compare />,
-        },
+      
         {
             path: "*",
             element: < NotFound />

@@ -19,7 +19,7 @@ export default function Home(){
           <HomeProducts
         data={products}
         />
-        <Newsletter/>
+      
         </section>
         </>
     )
