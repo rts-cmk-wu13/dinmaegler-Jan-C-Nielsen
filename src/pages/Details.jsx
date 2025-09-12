@@ -17,7 +17,6 @@ export default function Detail() {
                     <ProductDetails product={product} />
                 </section>
             </section>
-
         </>
     )
 }

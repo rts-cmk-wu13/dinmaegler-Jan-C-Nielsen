@@ -57,10 +57,10 @@ export default function Footer() {
                             <section className="footer__moreinfo">
                                 <div className="footer__moreinfoItems">
                                     <h3>Quick Links</h3>
-                                    <p className="footer__para"><Link to="moreinfo" className="footer__moreinfoItem">Boliger til salg</Link></p>
-                                    <p className="footer__para"><Link to="moreinfo" className="footer__moreinfoItem">Mæglere</Link></p>
-                                    <p className="footer__para"><Link to="moreinfo" className="footer__moreinfoItem">Kontakt os</Link></p>
-                                    <p className="footer__para"><Link to="moreinfo" className="footer__moreinfoItem">Log ind / bliv bruger</Link></p>
+                                    <p className="footer__para"><Link to="list" className="footer__moreinfoItem">Boliger til salg</Link></p>
+                                    <p className="footer__para"><Link to="maeglere" className="footer__moreinfoItem">Mæglere</Link></p>
+                                    <p className="footer__para"><Link to="contact" className="footer__moreinfoItem">Kontakt os</Link></p>
+                                    <p className="footer__para"><Link to="login" className="footer__moreinfoItem">Log ind / bliv bruger</Link></p>
                                 </div>
                             </section>
 
