@@ -13,7 +13,7 @@ export default function Detail() {
     //const location = useLocation();
     //const searchQuery = location.state?.query;
 
-    console.log("Search query from location state:", searchQuery);
+   // console.log("Search query from location state:", searchQuery || "No query provided");
 
     return (
         <>
