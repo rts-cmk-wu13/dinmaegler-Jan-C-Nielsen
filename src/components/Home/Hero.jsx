@@ -36,10 +36,10 @@ export default function Hero() {
               className="hero__search-input"
             />
             <button
-              value="Søg..."
+              type="submit"
               classname="hero__search-button"
-              onClick={handleSearch}
-            />
+              onClick={handleSearch}>Søg...</button>
+            
           </form>
         </div>
       </div>

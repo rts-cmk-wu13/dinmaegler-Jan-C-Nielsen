@@ -10,11 +10,6 @@ export default function Detail() {
     const product = useLoaderData();
     console.log(product);
     
-    //const location = useLocation();
-    //const searchQuery = location.state?.query;
-
-   // console.log("Search query from location state:", searchQuery || "No query provided");
-
     return (
         <>
             <section className="details">
