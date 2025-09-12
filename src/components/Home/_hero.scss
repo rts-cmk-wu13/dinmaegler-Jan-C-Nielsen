@@ -27,7 +27,7 @@
 
     &__description {
         font-size: 16px;
-          margin-bottom: 1rem;
+        margin-bottom: 1rem;
     }
 
     &__subtitle-wrapper {
@@ -50,6 +50,17 @@
             font-size: 16px;
         }
 
+        button {
+            width: 20%;
+           color: black;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+
+            &:hover {
+                background-color: darken(orange, 10%);
+            }
+        }
     }
 
 

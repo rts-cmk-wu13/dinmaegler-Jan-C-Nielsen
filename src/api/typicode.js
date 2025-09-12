@@ -10,23 +10,23 @@ export async function geocodeAddressLoader({ request }) {
     const url = new URL(request.url);
     console.log(url);
     const address = url.searchParams.get('address');
-const params = url.search;
+    const params = url.search;
 
     if (!params) return null;
     try {
 
 
-//   const params = new URLSearchParams({
-//     street: "1600 Amphitheatre Parkway",
-//     city: "Mountain View",
-//     state: "California",
-//     postalcode: "94043",
-//     country: "USA",
-//     format: "json",
-//     addressdetails: "1",
-//     limit: "1",
-//     email: "your@email.com"  // Replace with your email
-//   });
+        //   const params = new URLSearchParams({
+        //     street: "1600 Amphitheatre Parkway",
+        //     city: "Mountain View",
+        //     state: "California",
+        //     postalcode: "94043",
+        //     country: "USA",
+        //     format: "json",
+        //     addressdetails: "1",
+        //     limit: "1",
+        //     email: "your@email.com"  // Replace with your email
+        //   });
 
         const response = await fetch(
             `${OSM_BASE_URL}?${params.toString()}`
