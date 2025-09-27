@@ -17,9 +17,9 @@ export default function LoginToAccount() {
                 <p>If you have an account, sign in with your email address.</p>
                 <Form method="post" className="signupcontainer__form">
                     <div className="signupcontainer__form-group">
-                        <label htmlFor="email">Email</label>
+                        <label htmlFor="identifier">Email</label>
                         <p>{errors && errors?.email?.errors[0]}</p>
-                        <input type="text" id="email" name="email" required />
+                        <input type="text" id="identifier" name="identifier" required />
                     </div>
                     <div className="signupcontainer__form-group">
                         <label htmlFor="password">Password</label>

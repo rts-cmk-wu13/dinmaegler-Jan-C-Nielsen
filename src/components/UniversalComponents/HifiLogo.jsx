@@ -1,11 +1,12 @@
-export default function HifiLogo() {
+import dinmaegler from "/Dinmaegler.png";
+
+export default function Logo() {
     return (
         <>
-        
-        <section className="hifilogo">
-            <section className="hifilogo__textbox">
-            <span className="hifilogo__text">hi</span>
-            <span className="hifilogo__text">fi</span>
+         
+        <section className="logo">
+            <section >
+                <img src={dinmaegler} alt="Din Mægler Logo" />
             </section>
         </section>
         </>
