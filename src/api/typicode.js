@@ -99,3 +99,39 @@ export async function getProduct({ params }) {
     });
 }
 
+//agents
+export async function getAgents({ request }) {
+    const url = (`https://dinmaegler.onrender.com/agents`);
+
+    console.log(`Fetching products with url: ${url}`);
+
+    return queryClient.fetchQuery({
+        queryKey: ['agents', url],
+        queryFn: async () => {
+            const response = await fetch(url);
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        }
+    });
+}
+
+//get one agent
+export async function getAgent({ params }) {
+    console.log(params);
+    const { id } = params;
+     return queryClient.fetchQuery({
+        queryKey: ['agent', id],
+        queryFn: async () => {
+            const response = await fetch(`https://dinmaegler.onrender.com/agents/${id}`);
+            if (!response.ok) {
+                throw new Error('Network error: ' + response.statusText);
+            }
+            // console.log("response:" + response.json());
+            return response.json();
+        }
+    }); 
+}
+
+
