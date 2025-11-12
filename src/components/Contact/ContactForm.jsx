@@ -33,8 +33,7 @@ console.log('Form data:', data);
 
 
     return (
-        <>
-        
+     <>
         <Form onSubmit={handleSubmit} className={classes}>
             <div className="form-group name">
                 <label htmlFor="name" >Full name</label>
@@ -64,6 +63,6 @@ console.log('Form data:', data);
             </div>
             <button type="submit">Submit</button>
         </Form>
-        </>
+    </>
     )
 }
