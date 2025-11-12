@@ -2,7 +2,7 @@
 import { Form, useActionData } from "react-router";
 import { useState } from 'react';
 
-export default function ContactForm() {
+export default function ContactForm({classes ="contactform"}) {
     const errors = useActionData();
     const [error, setError] = useState(null);
 
@@ -29,23 +29,21 @@ console.log('Form data:', data);
             console.error('Submit failed:', result);
             return;
         }
-     
-
     }
 
 
     return (
         <>
         
-        <Form onSubmit={handleSubmit} className="contactform">
-            <div className="form-group">
-                <label htmlFor="name" className="contactform__label">Full name</label>
+        <Form onSubmit={handleSubmit} className={classes}>
+            <div className="form-group name">
+                <label htmlFor="name" >Full name</label>
                 <p>{errors && errors?.name?.errors[0]}</p>
 
                 <input type="text" name="name" placeholder="Name" className="contactform__input"/>
             </div>
 
-            <div className="form-group">
+            <div className="form-group email">
                 <label htmlFor="email">Email</label>
                 <p>{errors && errors?.email?.errors[0]}</p>
 

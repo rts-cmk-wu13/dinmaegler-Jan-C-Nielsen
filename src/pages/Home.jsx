@@ -14,11 +14,11 @@ export default function Home(){
         <>
         <section className="home">
         
-        <Hero/>
-        <Intro/>
+          <Hero/>
+          <Intro/>
           <HomeProducts
-        data={products}
-        />
+           data={products}
+          />
       
         </section>
         </>
