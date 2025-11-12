@@ -34,6 +34,7 @@ export default function AgentDetails() {
           </div>
         </section>
         <p>{agent.description}</p>
+         <ContactForm classes = "agent-detail__contactform"/>
       </section>
       <aside className="sidebar">
         <p>Find The Best</p>
@@ -44,7 +45,7 @@ export default function AgentDetails() {
         <p>+00 123 456 789</p>
       </aside>
     </div>
-    <ContactForm className = "agent-detail__contactform"/>
+   
     </>
   );
 }

@@ -1,4 +1,4 @@
-.agent-detail-container{
+.agent-detail-container {
     display: flex;
     max-width: 1100px;
     margin: 0 auto;
@@ -7,23 +7,21 @@
     margin-top: 50px;
 }
 
-.agent-detail-section{
-     width: 60%;
- padding: 20px;
+.agent-detail-section {
+    width: 60%;
+    padding: 20px;
 }
 
-.product__agent{
-   
-}
+.product__agent {}
 
-.agentcard__title{
+.agentcard__title {
     font-size: 16px;
     font-weight: 400;
     margin-top: 5px;
 }
 
 .agentcard_icon {
-   
+
     margin-top: 10px;
     margin-right: 10px;
 }
@@ -40,16 +38,62 @@
 }
 
 aside {
-  width:20%;
-   text-align: center;
+    width: 20%;
+    text-align: center;
     margin-top: 20px;
     color: white;
     background-color: black;
     padding: 50px 20px;
 }
 
-.agent-detail__contactform{
-    width: 650px;
+.agent-detail__contactform {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1100px;
+    margin: 0 auto;
     margin-top: 20px;
+    font-size: 18px;
+
+    button {
+        background-color: black;
+        color: white;
+        font-weight: bold;
+        padding: 3%;
+        border: none;
+        cursor: pointer;
+        width: 30%;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 5px;
+    }
 }
 
+.form-group {
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.contactform__input,
+.contactform__message {
+    width: 100%;
+    background-color: white;
+}
+
+.name {
+    width: 45%;
+}
+
+.email {
+    margin-left: 10%;
+    width: 45%;
+}
+
+button {
+    background-color: black;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
