@@ -29,8 +29,6 @@ console.log('Form data:', data);
             console.error('Submit failed:', result);
             return;
         }
-     
-
     }
 
 
