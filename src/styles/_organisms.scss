@@ -258,6 +258,8 @@
     }
 }
 
+
+
 .productcard {
     width: 500px;
     background-color: $productCardBackground;
@@ -310,7 +312,7 @@
 
         img {
             position: absolute;
-              z-index: 1;
+            z-index: 1;
             //top: -30px; // move image up to crop from top
             //left: -30px; // move image left to crop from left
             width: 500px; // or fixed width
@@ -338,11 +340,27 @@
         margin-bottom: 1rem;
     }
 
-
-
     &__footer-home {
         width: 100%;
         display: flex;
         justify-content: center;
+    }
+}
+
+.agentcard {
+
+    text-align: center;
+    width: 350px;
+
+    .agentcard_img {
+       width: 100%;
+       
+    }
+
+    &__name {
+        font-size: 18px;
+        font-weight: bold;
+        color: $blackColor;
+        margin-top: 1rem;
     }
 }

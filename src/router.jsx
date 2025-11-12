@@ -19,7 +19,7 @@ import Signup from "./pages/SignUp";
 import { handleSignUp } from "./api/signupActions";
 // import RequireAuth from "./components/RequireAuth";
 
-import { getProducts, getProduct, getProductsNumber, geocodeAddressLoader } from "./api/typicode";
+import { getAgent, getAgents, getProducts, getProduct, getProductsNumber, geocodeAddressLoader } from "./api/typicode";
 
 import Login from "./pages/Login";
 import { handleLogin } from "./api/loginActions";
@@ -31,7 +31,8 @@ import DetailsShell from "./components/Details/DetailsShell";
 import AddressMap from "./pages/OpenStreet";
 // import { handleSubmit } from "./api/actions";
 // import RequireAuth from "./components/RequireAuth";
-
+import RealEstateAgents from "./pages/RealEstateAgents";
+import RealEstateAgentDetail from "./components/RealEstateAgents/RealEstateAgentDetail";
 
 const router = createBrowserRouter([
     {
@@ -80,7 +81,6 @@ const router = createBrowserRouter([
                 },
             ],
         },
-
         {
             path: "contact",
             element: <Contact />,
@@ -91,7 +91,18 @@ const router = createBrowserRouter([
             element: <Signup />,
             action: handleSignUp,
         },
-      
+        {
+            path: "realestateagents",
+            element: <RealEstateAgents />
+            ,
+            loader: getAgents,
+        },
+          {
+            path: "realestateagent/:id",
+            element: <RealEstateAgentDetail />
+            ,
+            loader: getAgent,
+        },
         {
             path: "*",
             element: < NotFound />

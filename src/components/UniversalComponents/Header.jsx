@@ -92,7 +92,7 @@ export default function Header() {
 
         <section className="header__navigation">
           <Link to="/list" className="header__navigation-item">Boliger til salg</Link>
-          <Link to="/maegler" className="header__navigation-item">Mæglere</Link>
+          <Link to="/realestateagents" className="header__navigation-item">Mæglere</Link>
           <Link to="/fav" className="header__navigation-item">Mine favoritter</Link>
           <Link to="/contact" className="header__navigation-item">Kontakt os</Link>
         </section>
